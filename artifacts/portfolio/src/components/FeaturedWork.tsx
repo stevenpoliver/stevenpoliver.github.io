@@ -31,7 +31,7 @@ const projects = [
 export default function FeaturedWork() {
   return (
     <section id="projects" className="py-16 relative z-10">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         <div className="mb-10">
           <motion.div 
@@ -69,7 +69,7 @@ export default function FeaturedWork() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass rounded-2xl p-8 md:p-10 group relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-8 hover:bg-white/[0.04] hover:-translate-y-1 hover:border-[var(--accent-yellow)]/30 hover:shadow-[0_4px_20px_rgba(245,197,24,0.05)] transition-all duration-300"
+              className="glass rounded-2xl p-6 sm:p-8 md:p-10 group relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 hover:bg-white/[0.04] hover:-translate-y-1 hover:border-[var(--accent-yellow)]/30 hover:shadow-[0_4px_20px_rgba(245,197,24,0.05)] transition-all duration-300"
             >
               <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-3 mb-4">

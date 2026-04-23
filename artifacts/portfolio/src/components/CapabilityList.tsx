@@ -12,8 +12,8 @@ const capabilities = [
 export default function CapabilityList() {
   return (
     <section className="py-16 relative z-10 bg-black/20 border-y border-white/5">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-12 gap-12 items-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
           
           <div className="md:col-span-5">
             <motion.div 

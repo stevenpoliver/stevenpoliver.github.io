@@ -5,14 +5,14 @@ import { LINKS } from "@/config/links";
 export default function Connect() {
   return (
     <section id="connect" className="py-16 relative z-10">
-      <div className="max-w-6xl mx-auto px-6"><div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6"><div className="max-w-4xl mx-auto text-center">
         
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="glass rounded-3xl p-12 md:p-16 relative overflow-hidden"
+          className="glass rounded-3xl p-8 sm:p-12 md:p-16 relative overflow-hidden"
         >
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-[500px] bg-blue-500/20 blur-[100px] pointer-events-none" />
           

@@ -22,7 +22,7 @@ const queryClient = new QueryClient();
 
 function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-blue-500/30">
+    <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-blue-500/30 overflow-x-hidden">
       <Header />
       <main className="flex-1 flex flex-col">
         <Hero />

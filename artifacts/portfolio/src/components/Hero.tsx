@@ -13,7 +13,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative flex items-start pt-28 pb-16 overflow-hidden isolate">
+    <section className="relative flex items-start pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden isolate">
       {/* Layer 1: Deep base wash (near-black navy) */}
       <div
         className="absolute inset-0 -z-10 pointer-events-none"
@@ -187,25 +187,28 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-12 gap-12 lg:gap-16 items-start z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full grid lg:grid-cols-12 gap-10 lg:gap-16 items-start z-10">
         
         {/* Left Column (55%) */}
-        <div className="lg:col-span-6 xl:col-span-7 flex flex-col items-start z-10 lg:pt-7">
+        <div className="lg:col-span-6 xl:col-span-7 min-w-0 w-full flex flex-col items-start z-10 lg:pt-7">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--accent-yellow)]/30 bg-[var(--accent-yellow)]/5 text-[0.65rem] sm:text-xs font-bold tracking-widest text-[var(--accent-yellow)] uppercase mb-8"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--accent-yellow)]/30 bg-[var(--accent-yellow)]/5 text-[0.6rem] sm:text-xs font-bold tracking-widest text-[var(--accent-yellow)] uppercase mb-6 sm:mb-8 leading-snug max-w-full overflow-hidden"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-yellow)]" />
-            STRATEGY-LED. DELIVERY-DRIVEN. BUILT FOR REAL OUTCOMES.
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-yellow)] shrink-0" />
+            <span className="truncate">
+              <span className="sm:hidden">STRATEGY-LED · BUILT FOR OUTCOMES</span>
+              <span className="hidden sm:inline">STRATEGY-LED. DELIVERY-DRIVEN. BUILT FOR REAL OUTCOMES.</span>
+            </span>
           </motion.div>
 
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-6"
+            className="text-[1.75rem] sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.15] sm:leading-[1.1] mb-6 break-words"
           >
             I'm an IT Consultant with deep technical expertise across Microsoft environments, combining hands-on <span className="text-[var(--accent-yellow)]">technical capability</span> with <span className="text-[var(--accent-yellow)]">solution architecture</span> and <span className="text-[var(--accent-yellow)]">cyber security</span> expertise.
           </motion.h1>
@@ -280,7 +283,7 @@ export default function Hero() {
         </div>
 
         {/* Right Column (45%) */}
-        <div className="lg:col-span-6 xl:col-span-5 z-10 w-full relative flex flex-col gap-6">
+        <div className="lg:col-span-6 xl:col-span-5 min-w-0 z-10 w-full relative flex flex-col gap-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}

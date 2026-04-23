@@ -35,7 +35,7 @@ const pillars = [
 export default function CapabilityPillars() {
   return (
     <section id="capability" className="py-16 relative z-10">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
