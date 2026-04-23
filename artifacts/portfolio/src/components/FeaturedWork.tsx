@@ -48,7 +48,7 @@ export default function FeaturedWork() {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
           >
-            Projects that show how I think and build
+            Projects that reflect how I design and deliver solutions
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export default function FeaturedWork() {
             transition={{ delay: 0.1 }}
             className="text-lg text-muted-foreground max-w-3xl"
           >
-            These are examples of platforms and ideas built to solve practical business, delivery, and security challenges.
+            Bespoke platforms and concepts built to address real business and security challenges.
           </motion.p>
         </div>
 
