@@ -49,7 +49,7 @@ export const PROJECTS: Project[] = [
     id: "soe-portal",
     category: "Modern Workplace / Program Delivery",
     status: "Showcase Project",
-    title: "SOE Refresh Orchestration Portal",
+    title: "SOE/MOE Refresh Orchestration Portal",
     description:
       "A delivery-focused portal built to support large-scale SOE refresh and uplift initiatives with governance, visibility, and execution structure.",
     tags: ["Windows 11", "Modern Desktop", "Program Delivery"],
