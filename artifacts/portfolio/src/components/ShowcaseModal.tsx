@@ -221,6 +221,10 @@ export default function ShowcaseModal({ project, onClose }: ShowcaseModalProps) 
                   </span>
                 ))}
               </div>
+
+              <p className="text-[0.7rem] leading-relaxed text-muted-foreground/60 italic">
+                Disclaimer: This is a personal concept project. All branding, product names, screens and data shown are illustrative only and do not reflect any client, employer or live production system.
+              </p>
             </div>
           </motion.div>
         </motion.div>

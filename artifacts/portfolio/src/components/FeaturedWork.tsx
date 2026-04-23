@@ -36,6 +36,15 @@ export default function FeaturedWork() {
           >
             Bespoke platforms and concepts built to address real business and security challenges.
           </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+            className="text-xs text-muted-foreground/70 mt-3 italic"
+          >
+            Note: these are personal concept projects. All branding, screens and data shown are illustrative only and do not represent any client, employer or production system.
+          </motion.p>
         </div>
 
         <div className="flex flex-col gap-6">
