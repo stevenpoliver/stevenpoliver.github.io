@@ -41,9 +41,9 @@ export default function FeaturedWork() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="text-xs text-muted-foreground/70 mt-3 italic"
+            className="text-xs text-[var(--accent-yellow)]/80 mt-3 italic"
           >
-            Note: these are personal concept projects. All branding, screens and data shown are illustrative only and do not represent any client, employer or production system.
+            (Note: these are personal concept projects. All branding, screens and data shown are illustrative only and do not represent any client, employer or production system.)
           </motion.p>
         </div>
 
