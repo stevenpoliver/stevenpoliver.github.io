@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Check } from "lucide-react";
 import { CERTIFICATIONS } from "@/config/certifications";
 import { useState } from "react";
 
@@ -56,7 +56,7 @@ export default function Certifications() {
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[var(--accent-yellow)]"></span>
           </span>
           Verified via Credly
-          <ExternalLink className="w-3 h-3 opacity-50" />
+          <Check className="w-3 h-3 text-[var(--accent-yellow)]" strokeWidth={3} />
         </div>
       </div>
 
