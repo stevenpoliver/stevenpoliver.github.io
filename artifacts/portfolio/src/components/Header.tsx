@@ -37,7 +37,7 @@ export default function Header() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 glass border-b-0 border-white/5 bg-background/50"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
         <div className="flex flex-col min-w-0">
           <span className="font-bold text-base sm:text-lg tracking-tight truncate">Steven Oliver</span>
           <span className="text-xs text-muted-foreground hidden md:block">
