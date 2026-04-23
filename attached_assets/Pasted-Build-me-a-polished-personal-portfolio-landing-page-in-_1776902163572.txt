@@ -1,0 +1,178 @@
+Build me a polished personal portfolio landing page in React + Tailwind CSS, suitable for deployment to GitHub Pages in my personal repo named <MY_GITHUB_USERNAME>.github.io.
+
+Goal:
+Create a premium dark-themed landing page that showcases my projects, consulting capability, and technical strengths. The page should feel modern, high-end, and product-quality — similar to a startup landing page or polished GitHub portfolio.
+
+Tech requirements:
+- Use React
+- Use Tailwind CSS
+- Build as a Vite app
+- Make it easy to export/push to GitHub
+- Structure the project cleanly for GitHub Pages deployment
+- Include a README with exact run/build/deploy steps
+- Ensure the project can be deployed as a user GitHub Pages site
+- Set the Vite base config appropriately for a user site root deployment
+- Make sure styling is fully working, responsive, and production-ready
+
+Design direction:
+- Dark premium background
+- Subtle glowing gradient or blurred orb effects
+- Clean, modern typography
+- Large hero section
+- Glassmorphism / soft-card styling
+- Rounded corners
+- Soft shadows
+- Strong spacing and layout hierarchy
+- Executive / consulting / product-builder aesthetic
+- Mobile responsive
+
+Branding/content:
+Name: Steven Oliver
+
+Header subtitle:
+Solutions Architect • Cyber Security • Modern Workplace
+
+Hero badge:
+Designing practical solutions that improve delivery
+
+Hero headline:
+I build practical platforms,
+modern workplace solutions,
+and security-led outcomes.
+
+Hero paragraph:
+This site is a showcase of the projects, platforms, and concepts I’ve built across solution architecture, cyber security, modern device management, and delivery acceleration. It is where ideas become something tangible.
+
+Primary CTA:
+Explore My Work
+
+Secondary CTA:
+LinkedIn
+
+Top nav:
+- Projects
+- Capability
+- About
+- Connect
+
+Header buttons:
+- GitHub
+- View Projects
+
+GitHub links:
+Use placeholder links like:
+https://github.com/<MY_GITHUB_USERNAME>
+
+LinkedIn links:
+Use placeholder link:
+https://www.linkedin.com/in/<MY_LINKEDIN_HANDLE>
+
+Snapshot card:
+Title: What I bring
+Status pill: Delivery + Strategy
+
+Stats:
+- 22+ — Years in IT
+- Enterprise — Delivery Focus
+- Security — Architecture Mindset
+- Built — For Real Outcomes
+
+Snapshot supporting text:
+I focus on solutions that are not just technically sound, but usable, scalable, supportable, and aligned to real-world delivery pressures.
+
+Capability pillars section:
+Create 4 cards:
+1. Cyber Security
+   Security architecture, Zero Trust thinking, governance uplift, privileged access, endpoint security, and practical risk-aligned delivery.
+
+2. Modern Workplace
+   Microsoft 365, Intune, Autopilot, Windows 11 transformation, endpoint management, and scalable operating environment uplift.
+
+3. Solution Architecture
+   Turning ideas into structured, usable, delivery-ready solutions that balance business outcomes, technical quality, and governance.
+
+4. Vibe-Coded Tooling
+   Rapid creation of practical internal platforms, portals, and accelerators to improve project execution, repeatability, and client outcomes.
+
+Featured Work section title:
+Projects that show how I think and build
+
+Featured Work intro text:
+These are examples of platforms and ideas built to solve practical business, delivery, and security challenges.
+
+Add 3 featured project cards:
+1. ProposalHub
+   Category: Pre-Sales / Delivery Enablement
+   Description: A proposal orchestration platform designed to improve scoping, effort estimation, governance, and delivery outcomes across consulting engagements.
+   Status: Flagship Build
+   Tags: React, Workflow, Commercials, Governance
+
+2. SOE Refresh Orchestration Portal
+   Category: Modern Workplace / Program Delivery
+   Description: A delivery-focused portal built to support large-scale SOE refresh and uplift initiatives with governance, visibility, and execution structure.
+   Status: Showcase Project
+   Tags: Windows 11, Modern Desktop, Program Delivery
+
+3. Security & Governance Accelerators
+   Category: Cyber Security / Consulting
+   Description: A growing collection of practical tools, concepts, and frameworks aimed at accelerating cyber maturity assessments, design thinking, and delivery consistency.
+   Status: In Progress
+   Tags: Security, Architecture, Risk, Advisory
+
+Each card should have:
+- category pill
+- status text
+- project title
+- description
+- tags
+- “View project →” link placeholder
+
+Capability section:
+Title:
+Bridging architecture, security, and delivery execution
+
+Body:
+My work typically sits at the intersection of strategy and execution. I enjoy turning broad initiatives into workable structures, practical platforms, and clearer delivery paths.
+
+Add 6 capability chips/cards:
+- Microsoft 365 / Intune / Autopilot
+- Cyber Security Architecture
+- Privileged Access Management
+- Modern Device Management
+- Delivery Enablement Platforms
+- Governance-Aligned Solution Design
+
+About section:
+Title:
+A builder with consulting depth
+
+Body paragraphs:
+I’m a senior consultant and solution architect with a strong background across cyber security, modern workplace, Microsoft platforms, and enterprise delivery. Over the years I’ve worked across both strategy and implementation, helping turn complex requirements into real outcomes.
+
+More recently, I’ve been building practical tooling and landing-page quality platforms that showcase a different way of working: faster concept-to-value, cleaner engagement structures, and solutions that can be iterated and reused.
+
+This site exists to make that work visible.
+
+Connect section:
+Title:
+Want to explore the work, collaborate, or see what I’m building next?
+
+Body:
+Use this page as a launch point into my GitHub projects, practical solution builds, and the ideas shaping where I’m heading next.
+
+Buttons:
+- Visit GitHub
+- LinkedIn
+
+Implementation instructions:
+- Build the full project, not just a single component
+- Include App.jsx, main.jsx, index.css, and Tailwind setup
+- Include package.json scripts for dev/build
+- Add a clean folder structure
+- Make sure it runs immediately after npm install
+- Add comments showing where I should swap in my real GitHub username and LinkedIn URL
+- Include a README that explains:
+  1. how to run locally
+  2. how to push to GitHub
+  3. how to deploy to GitHub Pages
+- Make the UI look polished and impressive out of the box
