@@ -210,7 +210,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-[1.75rem] sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.15] sm:leading-[1.1] mb-6 break-words"
           >
-            I'm an IT Consultant with deep technical expertise across Microsoft environments, combining hands-on <span className="text-[var(--accent-yellow)]">technical capability</span> with <span className="text-[var(--accent-yellow)]">solution architecture</span> and <span className="text-[var(--accent-yellow)]">cyber security</span> expertise.
+            I'm an IT Consultant with strong technical expertise across Microsoft environments, combining hands-on capability with <span className="text-[var(--accent-yellow)]">solution architecture</span> and <span className="text-[var(--accent-yellow)]">cyber security</span> expertise.
           </motion.h1>
 
           <motion.p 
