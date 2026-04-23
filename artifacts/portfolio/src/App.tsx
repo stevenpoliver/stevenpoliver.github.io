@@ -13,6 +13,7 @@ import CapabilityList from "@/components/CapabilityList";
 import About from "@/components/About";
 import Connect from "@/components/Connect";
 import Footer from "@/components/Footer";
+import PyramidEgg from "@/components/PyramidEgg";
 
 // =========================================================================
 // TO UPDATE LINKS (GITHUB/LINKEDIN), EDIT src/config/links.ts
@@ -33,6 +34,7 @@ function Home() {
         <Connect />
       </main>
       <Footer />
+      <PyramidEgg />
     </div>
   );
 }
