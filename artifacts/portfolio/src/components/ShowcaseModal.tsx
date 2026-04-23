@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
-import { Project, getEmbedUrl, hasShowcaseMedia } from "@/config/projects";
+import { X, ChevronLeft, ChevronRight, Sparkles, FileText, ExternalLink } from "lucide-react";
+import { Project, getEmbedUrl, getPdfEmbedUrl, hasShowcaseMedia } from "@/config/projects";
 
 interface ShowcaseModalProps {
   project: Project | null;
@@ -32,7 +32,14 @@ export default function ShowcaseModal({ project, onClose }: ShowcaseModalProps) 
 
   const screenshots = project?.showcase?.screenshots ?? [];
   const video = project?.showcase?.video;
+  const pdf = project?.showcase?.pdf;
   const hasMedia = project ? hasShowcaseMedia(project) : false;
+  const basePath = (import.meta as any).env?.BASE_URL ?? "/";
+  const pdfEmbedUrl = pdf ? getPdfEmbedUrl(pdf, basePath) : null;
+  const pdfDownloadUrl = pdf
+    ? (basePath.endsWith("/") ? basePath : basePath + "/") +
+      (pdf.url.startsWith("/") ? pdf.url.slice(1) : pdf.url)
+    : null;
   const safeIndex = screenshots.length
     ? ((slideIndex % screenshots.length) + screenshots.length) % screenshots.length
     : 0;
@@ -85,6 +92,40 @@ export default function ShowcaseModal({ project, onClose }: ShowcaseModalProps) 
                     allowFullScreen
                     className="absolute inset-0 w-full h-full"
                   />
+                </div>
+              )}
+
+              {pdf && pdfEmbedUrl && (
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between gap-3 flex-wrap">
+                    <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
+                      <FileText className="w-3.5 h-3.5 text-[var(--accent-yellow)]" />
+                      {pdf.label ?? "Reference deck"}
+                      {pdf.startPage && (
+                        <span className="text-[0.65rem] uppercase tracking-wider text-muted-foreground/70">
+                          · starts page {pdf.startPage}
+                        </span>
+                      )}
+                    </div>
+                    {pdfDownloadUrl && (
+                      <a
+                        href={pdfDownloadUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--accent-yellow)] hover:text-[var(--accent-yellow)]/80 transition-colors"
+                      >
+                        Open in new tab
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
+                  </div>
+                  <div className="relative w-full h-[70vh] min-h-[420px] rounded-xl overflow-hidden border border-white/10 bg-black/40">
+                    <iframe
+                      src={pdfEmbedUrl}
+                      title={`${project.title} deck`}
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  </div>
                 </div>
               )}
 

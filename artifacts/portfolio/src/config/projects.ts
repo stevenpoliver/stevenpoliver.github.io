@@ -11,8 +11,15 @@ export interface ProjectScreenshot {
   alt?: string;
 }
 
+export interface ProjectPdf {
+  url: string;
+  startPage?: number;
+  label?: string;
+}
+
 export interface ProjectShowcase {
   video?: ProjectVideo;
+  pdf?: ProjectPdf;
   screenshots?: ProjectScreenshot[];
 }
 
@@ -35,6 +42,13 @@ export const PROJECTS: Project[] = [
     description:
       "A growing collection of practical tools, concepts, and frameworks aimed at accelerating cyber maturity assessments, design thinking, and delivery consistency.",
     tags: ["Security", "Architecture", "Risk", "Advisory"],
+    showcase: {
+      pdf: {
+        url: "decks/security-hub.pdf",
+        startPage: 18,
+        label: "Concept walkthrough deck",
+      },
+    },
   },
   {
     id: "proposalhub",
@@ -74,6 +88,16 @@ export function getEmbedUrl(video: ProjectVideo): string {
 export function hasShowcaseMedia(project: Project): boolean {
   return Boolean(
     project.showcase?.video ||
+      project.showcase?.pdf ||
       (project.showcase?.screenshots && project.showcase.screenshots.length > 0),
   );
+}
+
+export function getPdfEmbedUrl(pdf: ProjectPdf, basePath: string): string {
+  const cleanBase = basePath.endsWith("/") ? basePath : basePath + "/";
+  const cleanUrl = pdf.url.startsWith("/") ? pdf.url.slice(1) : pdf.url;
+  const fragment = pdf.startPage
+    ? `#page=${pdf.startPage}&toolbar=1&navpanes=0&view=FitH`
+    : "#toolbar=1&navpanes=0&view=FitH";
+  return `${cleanBase}${cleanUrl}${fragment}`;
 }
