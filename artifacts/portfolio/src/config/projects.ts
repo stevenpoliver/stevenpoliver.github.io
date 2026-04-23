@@ -95,6 +95,23 @@ export const PROJECTS: Project[] = [
     description:
       "A delivery-focused portal built to support large-scale SOE refresh and uplift initiatives with governance, visibility, and execution structure.",
     tags: ["Windows 11", "Modern Desktop", "Program Delivery"],
+    showcase: {
+      screenshots: [
+        { src: "screenshots/soe-portal/slide-17.jpg" },
+        { src: "screenshots/soe-portal/slide-18.jpg" },
+        { src: "screenshots/soe-portal/slide-19.jpg" },
+        { src: "screenshots/soe-portal/slide-20.jpg" },
+        { src: "screenshots/soe-portal/slide-21.jpg" },
+        { src: "screenshots/soe-portal/slide-22.jpg" },
+        { src: "screenshots/soe-portal/slide-23.jpg" },
+        { src: "screenshots/soe-portal/slide-24.jpg" },
+        { src: "screenshots/soe-portal/slide-25.jpg" },
+        { src: "screenshots/soe-portal/slide-26.jpg" },
+        { src: "screenshots/soe-portal/slide-27.jpg" },
+        { src: "screenshots/soe-portal/slide-28.jpg" },
+        { src: "screenshots/soe-portal/slide-29.jpg" },
+      ],
+    },
   },
 ];
 
