@@ -11,6 +11,7 @@ import CapabilityPillars from "@/components/CapabilityPillars";
 import FeaturedWork from "@/components/FeaturedWork";
 import CapabilityList from "@/components/CapabilityList";
 import About from "@/components/About";
+import SectorExperience from "@/components/SectorExperience";
 import Connect from "@/components/Connect";
 import Footer from "@/components/Footer";
 import PyramidEgg from "@/components/PyramidEgg";
@@ -30,6 +31,7 @@ function Home() {
         <CapabilityPillars />
         <CapabilityList />
         <About />
+        <SectorExperience />
         <FeaturedWork />
         <Connect />
       </main>

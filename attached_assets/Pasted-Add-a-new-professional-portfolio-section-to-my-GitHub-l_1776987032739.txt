@@ -1,0 +1,132 @@
+Add a new professional portfolio section to my GitHub landing page.
+
+Section title:
+“Experience Across Regulated and High-Consequence Sectors”
+
+Purpose:
+Show broad enterprise and cyber security experience without exposing client names or sensitive engagement details.
+
+Privacy requirement:
+Do not list client names. Present experience only by aggregated industry sector.
+
+Layout:
+Create a responsive tiled grid/table of sector cards.
+
+Each tile must include:
+- A small professional icon on the left or above the title
+- Sector name
+- Client/environment count
+- Subtle hover effect
+- Mouse-over tooltip describing the cyber/security considerations for that sector
+
+Use a clean executive visual style that matches the existing site:
+- Professional
+- Minimal
+- Modern
+- Suitable for a cyber/security consultant portfolio
+- Not cartoonish
+- Responsive across desktop and mobile
+
+Sector tiles and tooltip content:
+
+1. Government — State / Federal
+Count: 11
+Tooltip:
+“Public sector environments with strong governance, identity, data protection, Essential Eight, auditability and public service continuity considerations.”
+
+2. Local Government
+Count: 4
+Tooltip:
+“Council environments balancing citizen services, legacy systems, cloud adoption, endpoint security, identity maturity and operational resilience.”
+
+3. Aviation
+Count: 2
+Tooltip:
+“High-availability operational environments where identity, endpoint security, resilience, access control and cyber assurance directly support business continuity.”
+
+4. Defence & Aerospace
+Count: 2
+Tooltip:
+“Security-conscious environments with heightened requirements for access control, privileged access, information protection and systems assurance.”
+
+5. Energy & Utilities
+Count: 3
+Tooltip:
+“Critical infrastructure environments with operational resilience, identity security, privileged access, monitoring and SOCI-aligned risk considerations.”
+
+6. Mining, Resources & Energy Infrastructure
+Count: 4
+Tooltip:
+“Distributed enterprise and operational environments requiring secure access, endpoint visibility, resilience, governance and risk-based control alignment.”
+
+7. Infrastructure / Ports / Transport
+Count: 2
+Tooltip:
+“Operationally critical environments where cyber security supports service continuity, asset protection, identity control and resilience.”
+
+8. Technology / Data Centres
+Count: 1
+Tooltip:
+“Technology and hosting environments with strong requirements for availability, access control, monitoring, resilience and security assurance.”
+
+9. Construction / Engineering / Industrial
+Count: 2
+Tooltip:
+“Industrial and engineering environments balancing mobility, endpoint management, secure collaboration, identity and operational constraints.”
+
+10. Financial / Legal / Professional Services
+Count: 3
+Tooltip:
+“Highly regulated and commercially sensitive environments with strong focus on data protection, identity, compliance, confidentiality and auditability.”
+
+11. Insurance / Automotive
+Count: 2
+Tooltip:
+“Customer-facing enterprise environments with privacy, identity, endpoint security, regulatory and operational continuity considerations.”
+
+12. Healthcare / Medical Research / Pharmaceuticals
+Count: 2
+Tooltip:
+“Sensitive data environments requiring strong governance, identity, access control, information protection, resilience and compliance alignment.”
+
+13. Education — Universities & Schools
+Count: 6
+Tooltip:
+“Large and diverse user environments requiring scalable identity, endpoint management, student/staff access controls, security baselines and usability.”
+
+14. Not-for-Profit / Community Services
+Count: 3
+Tooltip:
+“Service-driven environments requiring practical security uplift, identity maturity, privacy protection, resilience and cost-conscious control design.”
+
+15. Hospitality / Entertainment
+Count: 1
+Tooltip:
+“Customer-facing environments with PCI DSS, identity, endpoint, availability, privacy and operational continuity considerations.”
+
+16. Property / Retirement Living
+Count: 1
+Tooltip:
+“Community and resident-focused environments requiring secure access, privacy, endpoint management and reliable operational systems.”
+
+17. Industrial / Private Enterprise
+Count: 2
+Tooltip:
+“Private enterprise environments requiring pragmatic cyber uplift across identity, endpoint, cloud, privileged access and operational governance.”
+
+After the tile grid, add a very short sales summary block:
+
+“Across these sectors, my work consistently focuses on building secure, resilient and governable technology foundations — aligning identity, endpoint, cloud, privileged access and compliance requirements to the realities of complex enterprise environments.”
+
+Optional visual accents:
+- Add small framework badges or subtle inline tags for:
+  Essential Eight
+  Zero Trust
+  PCI DSS
+  SOCI
+  NIST
+  Privileged Access
+  Cloud Security
+  Endpoint Security
+
+Ensure the section feels credible, concise and executive-ready.
