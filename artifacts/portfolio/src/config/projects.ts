@@ -68,6 +68,9 @@ export const PROJECTS: Project[] = [
     description:
       "A proposal orchestration platform designed to improve scoping, effort estimation, governance, and delivery outcomes across consulting engagements.",
     tags: ["React", "Workflow", "Commercials", "Governance"],
+    // Showcase temporarily hidden pending internal review approval.
+    // To re-enable, uncomment the showcase block below.
+    /*
     showcase: {
       screenshots: [
         { src: "screenshots/proposalhub/slide-12.jpg" },
@@ -86,6 +89,7 @@ export const PROJECTS: Project[] = [
         { src: "screenshots/proposalhub/slide-25.jpg" },
       ],
     },
+    */
   },
   {
     id: "soe-portal",
@@ -95,6 +99,9 @@ export const PROJECTS: Project[] = [
     description:
       "A delivery-focused portal built to support large-scale SOE refresh and uplift initiatives with governance, visibility, and execution structure.",
     tags: ["Windows 11", "Modern Desktop", "Program Delivery"],
+    // Showcase temporarily hidden pending internal review approval.
+    // To re-enable, uncomment the showcase block below.
+    /*
     showcase: {
       screenshots: [
         { src: "screenshots/soe-portal/slide-17.jpg" },
@@ -112,6 +119,7 @@ export const PROJECTS: Project[] = [
         { src: "screenshots/soe-portal/slide-29.jpg" },
       ],
     },
+    */
   },
 ];
 
