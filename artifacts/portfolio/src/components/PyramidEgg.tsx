@@ -41,7 +41,7 @@ export default function PyramidEgg({ href }: PyramidEggProps) {
               background: faceBg,
               border: "1px solid rgba(255,255,255,0.06)",
               transformOrigin: "50% 100%",
-              transform: `rotateY(${i * 90}deg) translateZ(20px) rotateX(-22deg)`,
+              transform: `rotateY(${i * 90}deg) translateZ(20px) rotateX(30deg)`,
               transition: "background 300ms ease",
             }}
           />
