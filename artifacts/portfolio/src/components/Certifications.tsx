@@ -61,16 +61,24 @@ export default function Certifications() {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {CERTIFICATIONS.map((cert, index) => (
-          <a
-            href={cert.credlyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            key={cert.id}
-            onMouseEnter={() => setHoveredId(cert.id)}
-            onMouseLeave={() => setHoveredId(null)}
-            className="group relative flex flex-col items-center text-center p-3 hover:-translate-y-1 hover:border-[var(--accent-yellow)]/50 hover:shadow-[0_0_20px_rgba(245,197,24,0.1)] transition-all duration-300 cursor-pointer overflow-hidden rounded-xl border border-transparent hover:bg-white/5"
-          >
+        {CERTIFICATIONS.map((cert, index) => {
+          const Wrapper: any = cert.credlyUrl ? "a" : "div";
+          const wrapperProps = cert.credlyUrl
+            ? {
+                href: cert.credlyUrl,
+                target: "_blank",
+                rel: "noopener noreferrer",
+                onMouseEnter: () => setHoveredId(cert.id),
+                onMouseLeave: () => setHoveredId(null),
+                className:
+                  "group relative flex flex-col items-center text-center p-3 hover:-translate-y-1 hover:border-[var(--accent-yellow)]/50 hover:shadow-[0_0_20px_rgba(245,197,24,0.1)] transition-all duration-300 cursor-pointer overflow-hidden rounded-xl border border-transparent hover:bg-white/5",
+              }
+            : {
+                className:
+                  "group relative flex flex-col items-center text-center p-3 overflow-hidden rounded-xl border border-transparent",
+              };
+          return (
+          <Wrapper key={cert.id} {...wrapperProps}>
             <div className="relative mb-3 transform transition-transform duration-500 group-hover:scale-[1.04]">
               {cert.imageUrl ? (
                 <div className="relative w-20 h-20 mx-auto flex items-center justify-center">
@@ -95,24 +103,27 @@ export default function Certifications() {
               {cert.issuer}
             </p>
 
-            <AnimatePresence>
-              {hoveredId === cert.id && (
-                <motion.div
-                  initial={{ opacity: 0, y: 5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 5 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/90 to-transparent flex justify-center pointer-events-none"
-                >
-                  <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-black border border-[var(--accent-yellow)]/50 text-[0.55rem] font-medium text-[var(--accent-yellow)] shadow-lg">
-                    Verify
-                    <ExternalLink className="w-2.5 h-2.5" />
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </a>
-        ))}
+            {cert.credlyUrl && (
+              <AnimatePresence>
+                {hoveredId === cert.id && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 5 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/90 to-transparent flex justify-center pointer-events-none"
+                  >
+                    <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-black border border-[var(--accent-yellow)]/50 text-[0.55rem] font-medium text-[var(--accent-yellow)] shadow-lg">
+                      Verify
+                      <ExternalLink className="w-2.5 h-2.5" />
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            )}
+          </Wrapper>
+          );
+        })}
       </div>
 
     </div>

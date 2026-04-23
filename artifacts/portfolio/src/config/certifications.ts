@@ -3,7 +3,7 @@ export interface Certification {
   abbr: string;
   name: string;
   issuer: string;
-  credlyUrl: string;
+  credlyUrl?: string;
   imageUrl?: string;
   style: "isaca" | "isc2" | "zero-trust";
 }
@@ -61,8 +61,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: "zero-trust",
     abbr: "Zero Trust",
     name: "Zero Trust Architect",
-    issuer: "Zero Trust", // Placeholder issuer text
-    credlyUrl: "https://www.credly.com/users/<MY_CREDLY_HANDLE>/badges#zero-trust",
+    issuer: "Zero Trust",
     style: "zero-trust",
   },
 ];
