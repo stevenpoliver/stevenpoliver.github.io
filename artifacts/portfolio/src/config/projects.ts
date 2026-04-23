@@ -43,11 +43,21 @@ export const PROJECTS: Project[] = [
       "A growing collection of practical tools, concepts, and frameworks aimed at accelerating cyber maturity assessments, design thinking, and delivery consistency.",
     tags: ["Security", "Architecture", "Risk", "Advisory"],
     showcase: {
-      pdf: {
-        url: "decks/security-hub.pdf",
-        startPage: 18,
-        label: "Concept walkthrough deck",
-      },
+      screenshots: [
+        { src: "screenshots/security-hub/slide-18.jpg", caption: "Platform walk-through" },
+        { src: "screenshots/security-hub/slide-19.jpg" },
+        { src: "screenshots/security-hub/slide-20.jpg" },
+        { src: "screenshots/security-hub/slide-21.jpg" },
+        { src: "screenshots/security-hub/slide-22.jpg" },
+        { src: "screenshots/security-hub/slide-23.jpg" },
+        { src: "screenshots/security-hub/slide-24.jpg" },
+        { src: "screenshots/security-hub/slide-25.jpg" },
+        { src: "screenshots/security-hub/slide-26.jpg" },
+        { src: "screenshots/security-hub/slide-27.jpg" },
+        { src: "screenshots/security-hub/slide-28.jpg" },
+        { src: "screenshots/security-hub/slide-29.jpg" },
+        { src: "screenshots/security-hub/slide-30.jpg" },
+      ],
     },
   },
   {
