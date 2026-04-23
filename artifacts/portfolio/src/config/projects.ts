@@ -40,7 +40,7 @@ export const PROJECTS: Project[] = [
     id: "proposalhub",
     category: "Pre-Sales / Delivery Enablement",
     status: "Showcase Project",
-    title: "ProposalHub",
+    title: "Proposal Development Platform",
     description:
       "A proposal orchestration platform designed to improve scoping, effort estimation, governance, and delivery outcomes across consulting engagements.",
     tags: ["React", "Workflow", "Commercials", "Governance"],
