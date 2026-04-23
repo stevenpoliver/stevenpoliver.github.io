@@ -68,6 +68,24 @@ export const PROJECTS: Project[] = [
     description:
       "A proposal orchestration platform designed to improve scoping, effort estimation, governance, and delivery outcomes across consulting engagements.",
     tags: ["React", "Workflow", "Commercials", "Governance"],
+    showcase: {
+      screenshots: [
+        { src: "screenshots/proposalhub/slide-12.jpg" },
+        { src: "screenshots/proposalhub/slide-13.jpg" },
+        { src: "screenshots/proposalhub/slide-14.jpg" },
+        { src: "screenshots/proposalhub/slide-15.jpg" },
+        { src: "screenshots/proposalhub/slide-16.jpg" },
+        { src: "screenshots/proposalhub/slide-17.jpg" },
+        { src: "screenshots/proposalhub/slide-18.jpg" },
+        { src: "screenshots/proposalhub/slide-19.jpg" },
+        { src: "screenshots/proposalhub/slide-20.jpg" },
+        { src: "screenshots/proposalhub/slide-21.jpg" },
+        { src: "screenshots/proposalhub/slide-22.jpg" },
+        { src: "screenshots/proposalhub/slide-23.jpg" },
+        { src: "screenshots/proposalhub/slide-24.jpg" },
+        { src: "screenshots/proposalhub/slide-25.jpg" },
+      ],
+    },
   },
   {
     id: "soe-portal",
