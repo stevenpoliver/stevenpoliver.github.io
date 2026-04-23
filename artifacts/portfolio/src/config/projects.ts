@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
     id: "security-accelerators",
     category: "Cyber Security / Consulting",
     status: "Flagship Build · In Progress",
-    title: "Security & Governance Accelerators",
+    title: "Security & Governance Accelerator",
     description:
       "A growing collection of practical tools, concepts, and frameworks aimed at accelerating cyber maturity assessments, design thinking, and delivery consistency.",
     tags: ["Security", "Architecture", "Risk", "Advisory"],
