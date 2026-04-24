@@ -178,7 +178,6 @@ const FRAMEWORKS = [
   "PCI DSS",
   "SOCI",
   "ASD ISM",
-  "ACSC E8",
   "Privileged Access",
   "Cloud Security",
   "Endpoint Security",
