@@ -211,17 +211,14 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-[1.75rem] sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.15] sm:leading-[1.1] mb-6 break-words"
           >
+            I'm an IT Consultant with strong technical expertise across Microsoft environments, combining hands-on capability with <span className="text-[var(--accent-yellow)]">solution architecture</span> and{" "}
             <TextScramble
-              duration={3200}
-              startDelay={450}
+              duration={2200}
+              startDelay={650}
               segments={[
-                { text: "I'm an IT Consultant with strong technical expertise across Microsoft environments, combining hands-on capability with " },
-                { text: "solution architecture", className: "text-[var(--accent-yellow)]" },
-                { text: " and " },
                 { text: "cyber security", className: "text-[var(--accent-yellow)]" },
-                { text: " expertise." },
               ]}
-            />
+            />{" "}expertise.
           </motion.h1>
 
           <motion.p 
