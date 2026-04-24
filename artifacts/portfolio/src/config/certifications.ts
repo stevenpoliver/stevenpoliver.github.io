@@ -1,3 +1,5 @@
+import zeroTrustStrategyBadge from "@assets/ZTStrategyCert_1777018893177.png";
+
 export interface Certification {
   id: string;
   abbr: string;
@@ -58,10 +60,11 @@ export const CERTIFICATIONS: Certification[] = [
     style: "isc2",
   },
   {
-    id: "zero-trust",
+    id: "zero-trust-strategy",
     abbr: "Zero Trust",
-    name: "Zero Trust Architect",
-    issuer: "CISA",
-    style: "zero-trust",
+    name: "Zero Trust Strategy Certificate",
+    issuer: "ISC2",
+    imageUrl: zeroTrustStrategyBadge,
+    style: "isc2",
   },
 ];
