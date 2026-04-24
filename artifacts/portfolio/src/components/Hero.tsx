@@ -5,6 +5,7 @@ import SnapshotCard from "./SnapshotCard";
 import LatestInsight from "./LatestInsight";
 import Certifications from "./Certifications";
 import QuoteCard from "./QuoteCard";
+import TextScramble from "./TextScramble";
 
 export default function Hero() {
   const scrollToProjects = () => {
@@ -210,7 +211,17 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-[1.75rem] sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.15] sm:leading-[1.1] mb-6 break-words"
           >
-            I'm an IT Consultant with strong technical expertise across Microsoft environments, combining hands-on capability with <span className="text-[var(--accent-yellow)]">solution architecture</span> and <span className="text-[var(--accent-yellow)]">cyber security</span> expertise.
+            <TextScramble
+              duration={2200}
+              startDelay={250}
+              segments={[
+                { text: "I'm an IT Consultant with strong technical expertise across Microsoft environments, combining hands-on capability with " },
+                { text: "solution architecture", className: "text-[var(--accent-yellow)]" },
+                { text: " and " },
+                { text: "cyber security", className: "text-[var(--accent-yellow)]" },
+                { text: " expertise." },
+              ]}
+            />
           </motion.h1>
 
           <motion.p 
