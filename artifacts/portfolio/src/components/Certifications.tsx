@@ -82,13 +82,13 @@ export default function Certifications() {
             <div className="relative mb-3 transform transition-transform duration-500 group-hover:scale-[1.04]">
               {cert.imageUrl ? (
                 <div className="relative w-20 h-20 mx-auto flex items-center justify-center">
-                  <div className="absolute inset-0 rounded-full bg-[var(--accent-yellow)]/0 group-hover:bg-[var(--accent-yellow)]/15 blur-xl transition-colors duration-500" />
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/95 to-white/80 ring-1 ring-white/20 group-hover:ring-[var(--accent-yellow)]/60 shadow-[0_4px_18px_rgba(0,0,0,0.45)] transition-all duration-500" />
+                  <div className={`absolute inset-0 ${cert.frameShape === "square" ? "rounded-xl" : "rounded-full"} bg-[var(--accent-yellow)]/0 group-hover:bg-[var(--accent-yellow)]/15 blur-xl transition-colors duration-500`} />
+                  <div className={`absolute inset-0 ${cert.frameShape === "square" ? "rounded-xl" : "rounded-full"} bg-gradient-to-br from-white/95 to-white/80 ring-1 ring-white/20 group-hover:ring-[var(--accent-yellow)]/60 shadow-[0_4px_18px_rgba(0,0,0,0.45)] transition-all duration-500`} />
                   <img
                     src={cert.imageUrl}
                     alt={`${cert.abbr} badge`}
                     loading="lazy"
-                    className="relative w-16 h-16 object-contain"
+                    className={`relative w-16 h-16 ${cert.frameShape === "square" ? "object-cover rounded-lg" : "object-contain"}`}
                   />
                 </div>
               ) : (

@@ -1,4 +1,5 @@
 import zeroTrustStrategyBadge from "@assets/ZTStrategyCert_1777018893177.png";
+import delineaCertifiedEngineerBadge from "@assets/Delinea-Certification-Badge-SS-engineer-300x300-H_1777019060119.jpg";
 
 export interface Certification {
   id: string;
@@ -7,7 +8,8 @@ export interface Certification {
   issuer: string;
   credlyUrl?: string;
   imageUrl?: string;
-  style: "isaca" | "isc2" | "zero-trust";
+  frameShape?: "circle" | "square";
+  style: "isaca" | "isc2" | "zero-trust" | "delinea";
 }
 
 // =========================================================================
@@ -66,5 +68,14 @@ export const CERTIFICATIONS: Certification[] = [
     issuer: "ISC2",
     imageUrl: zeroTrustStrategyBadge,
     style: "isc2",
+  },
+  {
+    id: "delinea-certified-engineer",
+    abbr: "DCE",
+    name: "Delinea Certified Engineer",
+    issuer: "Delinea",
+    imageUrl: delineaCertifiedEngineerBadge,
+    frameShape: "square",
+    style: "delinea",
   },
 ];
