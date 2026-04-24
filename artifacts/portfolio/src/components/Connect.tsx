@@ -24,13 +24,9 @@ export default function Connect() {
           >
             Let's Connect
           </motion.div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-foreground relative z-10">
-            Want to explore the work, collaborate, or see what I'm building next?
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-10 text-foreground relative z-10">
+            Want to explore my work, collaborate, or check out what I'm building next?
           </h2>
-          
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 relative z-10">
-            Use this page as a launch point into my GitHub projects, practical solution builds, and the ideas shaping where I'm heading next.
-          </p>
 
           <div className="flex flex-wrap justify-center gap-4 relative z-10">
             <a 
