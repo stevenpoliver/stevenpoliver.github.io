@@ -212,7 +212,7 @@ export default function Hero() {
             className="text-[1.75rem] sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.15] sm:leading-[1.1] mb-6 break-words"
           >
             <TextScramble
-              duration={9600}
+              duration={3200}
               startDelay={450}
               segments={[
                 { text: "I'm an IT Consultant with strong technical expertise across Microsoft environments, combining hands-on capability with " },
