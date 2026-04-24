@@ -61,7 +61,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: "zero-trust",
     abbr: "Zero Trust",
     name: "Zero Trust Architect",
-    issuer: "Zero Trust",
+    issuer: "CISA",
     style: "zero-trust",
   },
 ];
