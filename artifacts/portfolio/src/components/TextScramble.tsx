@@ -11,7 +11,9 @@ interface TextScrambleProps {
   startDelay?: number;
   scrambleChars?: string;
   headWindow?: number;
+  crossfadeWindow?: number;
   settleWindow?: number;
+  scrambleIntervalMs?: number;
   className?: string;
 }
 
@@ -23,8 +25,10 @@ export default function TextScramble({
   duration = 4800,
   startDelay = 450,
   scrambleChars = DEFAULT_CHARS,
-  headWindow = 20,
+  headWindow = 22,
+  crossfadeWindow = 6,
   settleWindow = 8,
+  scrambleIntervalMs = 140,
   className,
 }: TextScrambleProps) {
   const flatChars = segments.flatMap((seg, segIdx) =>
@@ -33,7 +37,7 @@ export default function TextScramble({
   const total = flatChars.length;
 
   const [revealCount, setRevealCount] = useState(0);
-  const [tick, setTick] = useState(0);
+  const [scrambleSeed, setScrambleSeed] = useState(0);
   const [done, setDone] = useState(false);
   const startRef = useRef<number | null>(null);
   const rafRef = useRef<number | undefined>(undefined);
@@ -58,7 +62,6 @@ export default function TextScramble({
       const progress = Math.min(elapsed / duration, 1);
       const eased = Math.sin((progress * Math.PI) / 2);
       setRevealCount(Math.floor(eased * total));
-      setTick((x) => x + 1);
       if (progress < 1) {
         rafRef.current = requestAnimationFrame(animate);
       } else {
@@ -72,66 +75,113 @@ export default function TextScramble({
     };
   }, [total, duration, startDelay]);
 
+  useEffect(() => {
+    if (done) return;
+    const id = window.setInterval(() => {
+      setScrambleSeed((x) => x + 1);
+    }, scrambleIntervalMs);
+    return () => window.clearInterval(id);
+  }, [done, scrambleIntervalMs]);
+
+  if (done) {
+    return (
+      <span className={className}>
+        {segments.map((seg, idx) => (
+          <span key={idx} className={seg.className}>
+            {seg.text}
+          </span>
+        ))}
+      </span>
+    );
+  }
+
   return (
     <span className={className} aria-label={segments.map((s) => s.text).join("")}>
       {flatChars.map((c, i) => {
-        if (done) {
+        if (c.ch === " " || c.ch === "\n") {
+          return <span key={i}>{c.ch}</span>;
+        }
+
+        const d = i - revealCount;
+
+        if (d >= headWindow) {
           return (
-            <span key={i} className={c.className}>
+            <span key={i} className="opacity-0" aria-hidden="true">
               {c.ch}
             </span>
           );
         }
-        if (i < revealCount) {
-          const ageFromHead = revealCount - i;
-          if (ageFromHead < settleWindow) {
-            const t = ageFromHead / settleWindow;
-            return (
+
+        let realOpacity = 0;
+        let scrambleOpacity = 0;
+        let settleT = 0;
+
+        if (d < -settleWindow) {
+          realOpacity = 1;
+        } else if (d < 0) {
+          realOpacity = 1;
+          settleT = -d / settleWindow;
+        } else if (d < crossfadeWindow) {
+          const cf = d / crossfadeWindow;
+          realOpacity = 1 - cf;
+          scrambleOpacity = cf * 0.85;
+        } else {
+          const edgeFade =
+            1 - (d - crossfadeWindow) / (headWindow - crossfadeWindow);
+          scrambleOpacity = 0.18 + edgeFade * 0.45;
+        }
+
+        const r = Math.abs(i * 7919 + scrambleSeed * 131) % scrambleChars.length;
+        const scrambleCh = scrambleChars[r];
+
+        const glowAlpha = (1 - settleT) * (settleT > 0 ? 0.35 : 0);
+        const glowBlur = (1 - settleT) * 6;
+
+        return (
+          <span
+            key={i}
+            style={{
+              position: "relative",
+              display: "inline-block",
+              whiteSpace: "pre",
+            }}
+          >
+            <span style={{ visibility: "hidden" }} aria-hidden="true">
+              {c.ch}
+            </span>
+            {scrambleOpacity > 0 && (
               <span
-                key={i}
+                aria-hidden="true"
+                className="text-[var(--accent-yellow)]"
+                style={{
+                  position: "absolute",
+                  left: 0,
+                  top: 0,
+                  opacity: scrambleOpacity,
+                  transition: "opacity 160ms linear",
+                }}
+              >
+                {scrambleCh}
+              </span>
+            )}
+            {realOpacity > 0 && (
+              <span
                 className={c.className}
                 style={{
-                  textShadow: `0 0 ${(1 - t) * 10}px rgba(245,197,24,${(1 - t) * 0.55})`,
-                  filter: `brightness(${1 + (1 - t) * 0.25})`,
+                  position: "absolute",
+                  left: 0,
+                  top: 0,
+                  opacity: realOpacity,
+                  textShadow:
+                    glowAlpha > 0.01
+                      ? `0 0 ${glowBlur}px rgba(245,197,24,${glowAlpha})`
+                      : undefined,
+                  transition: "opacity 160ms linear",
                 }}
               >
                 {c.ch}
               </span>
-            );
-          }
-          return (
-            <span key={i} className={c.className}>
-              {c.ch}
-            </span>
-          );
-        }
-        if (c.ch === " " || c.ch === "\n") {
-          return <span key={i}>{c.ch}</span>;
-        }
-        const distFromHead = i - revealCount;
-        if (distFromHead < headWindow) {
-          const r = Math.abs(i * 7919 + tick * 131) % scrambleChars.length;
-          const ch = scrambleChars[r];
-          const fade = 1 - distFromHead / headWindow;
-          const isLeading = distFromHead < 4;
-          return (
-            <span
-              key={i}
-              className="text-[var(--accent-yellow)]"
-              style={{
-                opacity: 0.25 + fade * 0.7,
-                textShadow: isLeading
-                  ? `0 0 ${10 - distFromHead * 1.5}px rgba(245,197,24,${0.7 - distFromHead * 0.1})`
-                  : "none",
-              }}
-            >
-              {ch}
-            </span>
-          );
-        }
-        return (
-          <span key={i} className="opacity-0" aria-hidden="true">
-            {c.ch}
+            )}
           </span>
         );
       })}
