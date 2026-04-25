@@ -64,6 +64,7 @@ export const CERTIFICATIONS: Certification[] = [
     abbr: "Zero Trust",
     name: "Zero Trust Strategy Certificate",
     issuer: "ISC2",
+    credlyUrl: "https://www.credly.com/badges/1f470044-0a13-4eea-b247-640773a82b1d",
     imageUrl: zeroTrustStrategyBadge,
     style: "isc2",
   },
