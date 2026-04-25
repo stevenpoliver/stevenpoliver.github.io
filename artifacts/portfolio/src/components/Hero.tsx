@@ -216,12 +216,12 @@ export default function Hero() {
               startDelay={450}
               segments={[
                 { text: "I'm an IT Consultant with strong technical expertise across Microsoft environments, combining hands-on capability with " },
-                { text: "solution architecture", className: "text-[var(--accent-yellow)]" },
+                { text: "Solutions Architecture", className: "text-[var(--accent-yellow)]" },
                 { text: ", " },
-                { text: "cyber security", className: "text-[var(--accent-yellow)]" },
-                { text: " and " },
-                { text: "AI adoption", className: "text-[var(--accent-yellow)]" },
-                { text: " certified expertise." },
+                { text: "Cyber Security", className: "text-[var(--accent-yellow)]" },
+                { text: " and certified in building " },
+                { text: "AI adoption strategy", className: "text-[var(--accent-yellow)]" },
+                { text: "." },
               ]}
             />
           </motion.h1>
