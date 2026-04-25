@@ -220,7 +220,7 @@ export default function Hero() {
                 { text: ", " },
                 { text: "Cyber Security", className: "text-[var(--accent-yellow)]" },
                 { text: " and certified in building " },
-                { text: "AI adoption strategy", className: "text-[var(--accent-yellow)]" },
+                { text: "AI adoption strategies", className: "text-[var(--accent-yellow)]" },
                 { text: "." },
               ]}
             />
