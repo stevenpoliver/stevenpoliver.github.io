@@ -217,9 +217,11 @@ export default function Hero() {
               segments={[
                 { text: "I'm an IT Consultant with strong technical expertise across Microsoft environments, combining hands-on capability with " },
                 { text: "solution architecture", className: "text-[var(--accent-yellow)]" },
-                { text: " and " },
+                { text: ", " },
                 { text: "cyber security", className: "text-[var(--accent-yellow)]" },
-                { text: " expertise." },
+                { text: " and " },
+                { text: "AI adoption", className: "text-[var(--accent-yellow)]" },
+                { text: " certified expertise." },
               ]}
             />
           </motion.h1>
