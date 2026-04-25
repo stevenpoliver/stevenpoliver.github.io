@@ -5,7 +5,7 @@ import SnapshotCard from "./SnapshotCard";
 import LatestInsight from "./LatestInsight";
 import Certifications from "./Certifications";
 import QuoteCard from "./QuoteCard";
-import TextScramble from "./TextScramble";
+import { TextScramble } from "@workspace/brand";
 
 export default function Hero() {
   const scrollToProjects = () => {

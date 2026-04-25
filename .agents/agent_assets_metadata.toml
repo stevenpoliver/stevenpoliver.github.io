@@ -1,0 +1,20 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "0XDMce4M4qIJFNrKE69wx"
+uri = "file://brand-handoff/PROMPT.md"
+type = "text"
+title = "PROMPT.md — paste into Security-Hub assistant"
+
+[[outputs]]
+id = "lI6eWc6whlkfiH7b59bRx"
+uri = "file://brand-handoff/brand/BRAND_BIBLE.md"
+type = "text"
+title = "BRAND_BIBLE.md — palette, surfaces, motion, voice"
+
+[[outputs]]
+id = "T1imZftccrsEBMmtsVF8V"
+uri = "file://brand-handoff/screenshots/hero.jpg"
+type = "image"
+title = "Visual reference — portfolio hero"
