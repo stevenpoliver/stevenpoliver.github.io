@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 const capabilities = [
   "Microsoft 365 / Intune / Autopilot",
   "Cyber Security Architecture",
+  "Identity & Access Management",
   "Privileged Access Management",
   "Modern Device Management",
   "Delivery Enablement Platforms",
