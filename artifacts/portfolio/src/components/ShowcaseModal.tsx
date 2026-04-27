@@ -85,13 +85,29 @@ export default function ShowcaseModal({ project, onClose }: ShowcaseModalProps) 
             <div className="p-5 sm:p-6 space-y-6">
               {video && (
                 <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
-                  <iframe
-                    src={getEmbedUrl(video)}
-                    title={`${project.title} walkthrough`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="absolute inset-0 w-full h-full"
-                  />
+                  {video.provider === "file" ? (
+                    <video
+                      poster={video.poster}
+                      controls
+                      playsInline
+                      preload="metadata"
+                      className="absolute inset-0 w-full h-full bg-black"
+                    >
+                      <source src={video.url} type="video/mp4" />
+                      {video.webmUrl && (
+                        <source src={video.webmUrl} type="video/webm" />
+                      )}
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <iframe
+                      src={getEmbedUrl(video)}
+                      title={`${project.title} walkthrough`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  )}
                 </div>
               )}
 
