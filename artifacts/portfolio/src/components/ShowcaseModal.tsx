@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight, Sparkles, FileText, ExternalLink } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Sparkles, FileText, ExternalLink, Share2, Check } from "lucide-react";
 import { Project, getEmbedUrl, getPdfEmbedUrl, hasShowcaseMedia } from "@/config/projects";
 
 interface ShowcaseModalProps {
@@ -10,6 +10,33 @@ interface ShowcaseModalProps {
 
 export default function ShowcaseModal({ project, onClose }: ShowcaseModalProps) {
   const [slideIndex, setSlideIndex] = useState(0);
+  const [shareFeedback, setShareFeedback] = useState<"idle" | "copied">("idle");
+
+  const handleShare = async () => {
+    const url = window.location.origin + (import.meta.env.BASE_URL ?? "/");
+    const shareData = {
+      title: "Steven Oliver — Portfolio",
+      text: "Check out Steven Oliver's portfolio — Solutions Architect, Cyber Security & AI adoption.",
+      url,
+    };
+    if (typeof navigator.share === "function") {
+      try {
+        await navigator.share(shareData);
+        return; // native share sheet handled it
+      } catch (err) {
+        // User cancelled the share sheet — bail without clipboard fallback
+        if (err instanceof DOMException && err.name === "AbortError") return;
+        // Any other error (NotAllowedError etc.) — fall through to clipboard
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      setShareFeedback("copied");
+      setTimeout(() => setShareFeedback("idle"), 2200);
+    } catch {
+      // clipboard unavailable — silent fail
+    }
+  };
 
   useEffect(() => {
     setSlideIndex(0);
@@ -73,13 +100,48 @@ export default function ShowcaseModal({ project, onClose }: ShowcaseModalProps) 
                   {project.title}
                 </h3>
               </div>
-              <button
-                onClick={onClose}
-                aria-label="Close showcase"
-                className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[var(--accent-yellow)]/40 text-foreground hover:text-[var(--accent-yellow)] transition-all"
-              >
-                <X className="w-4 h-4" />
-              </button>
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  onClick={(e) => { e.stopPropagation(); handleShare(); }}
+                  aria-label="Share portfolio"
+                  className="flex items-center gap-1.5 h-9 px-3 rounded-full bg-white/5 hover:bg-[var(--accent-yellow)]/10 border border-white/10 hover:border-[var(--accent-yellow)]/40 text-foreground hover:text-[var(--accent-yellow)] transition-all text-xs font-medium"
+                >
+                  <AnimatePresence mode="wait" initial={false}>
+                    {shareFeedback === "copied" ? (
+                      <motion.span
+                        key="copied"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.15 }}
+                        className="flex items-center gap-1.5 text-[var(--accent-yellow)]"
+                      >
+                        <Check className="w-3.5 h-3.5" />
+                        <span>Copied!</span>
+                      </motion.span>
+                    ) : (
+                      <motion.span
+                        key="share"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.15 }}
+                        className="flex items-center gap-1.5"
+                      >
+                        <Share2 className="w-3.5 h-3.5" />
+                        <span className="hidden sm:inline">Share</span>
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                </button>
+                <button
+                  onClick={onClose}
+                  aria-label="Close showcase"
+                  className="w-9 h-9 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[var(--accent-yellow)]/40 text-foreground hover:text-[var(--accent-yellow)] transition-all"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
             </div>
 
             <div className="p-5 sm:p-6 space-y-6">
