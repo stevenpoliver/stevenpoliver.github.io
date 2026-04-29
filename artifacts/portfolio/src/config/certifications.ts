@@ -68,4 +68,13 @@ export const CERTIFICATIONS: Certification[] = [
     imageUrl: zeroTrustStrategyBadge,
     style: "isc2",
   },
+  {
+    id: "ai-strategy",
+    abbr: "AI Strategy",
+    name: "Building AI Strategy Certificate",
+    issuer: "ISC2",
+    credlyUrl: "https://www.credly.com/badges/de53f898-9e73-4530-8aca-f44142b887d8",
+    imageUrl: "https://images.credly.com/size/340x340/images/ed057161-c699-452d-9052-c3186b11f4ae/blob",
+    style: "isc2",
+  },
 ];
