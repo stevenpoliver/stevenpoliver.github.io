@@ -4,4 +4,5 @@ export const LINKS = {
   // ==========================================
   GITHUB: "https://github.com/stevenpoliver",
   LINKEDIN: "https://www.linkedin.com/in/steven-oliver-7a5bb626/",
+  REPLIT: "https://replit.com/refer/stevenpoliver",
 };

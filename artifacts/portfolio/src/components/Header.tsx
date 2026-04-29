@@ -3,6 +3,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { LINKS } from "@/config/links";
 import { Github, Linkedin, Menu, X } from "lucide-react";
 
+function ReplitIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <rect x="3" y="3" width="18" height="4.5" rx="1.25" />
+      <rect x="3" y="9.75" width="12" height="4.5" rx="1.25" />
+      <rect x="3" y="16.5" width="6" height="4.5" rx="1.25" />
+    </svg>
+  );
+}
+
 export default function Header() {
   const [open, setOpen] = useState(false);
 
@@ -67,6 +77,15 @@ export default function Header() {
             className="flex items-center justify-center w-9 h-9 rounded-full text-muted-foreground hover:text-foreground hover:ring-1 hover:ring-[var(--accent-yellow)] transition-all duration-300"
           >
             <Github className="w-5 h-5" />
+          </a>
+          <a
+            href={LINKS.REPLIT}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Replit"
+            className="flex items-center justify-center w-9 h-9 rounded-full text-muted-foreground hover:text-foreground hover:ring-1 hover:ring-[var(--accent-yellow)] transition-all duration-300"
+          >
+            <ReplitIcon className="w-5 h-5" />
           </a>
           <a
             href={LINKS.LINKEDIN}
