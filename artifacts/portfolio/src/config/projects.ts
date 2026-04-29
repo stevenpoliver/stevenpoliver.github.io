@@ -1,6 +1,3 @@
-import securityHubPromoVideoMp4 from "@assets/security-hub-promo.mp4?url";
-import securityHubPromoVideoWebm from "@assets/security-hub-promo.webm?url";
-
 export type VideoProvider = "guidde" | "loom" | "youtube" | "vimeo" | "file";
 
 export interface ProjectVideo {
@@ -47,13 +44,6 @@ export const PROJECTS: Project[] = [
     description:
       "A growing collection of practical tools, concepts, and frameworks aimed at accelerating cyber maturity assessments, design thinking, and delivery consistency.",
     tags: ["Security", "Architecture", "Risk", "Advisory"],
-    showcase: {
-      video: {
-        provider: "file",
-        url: securityHubPromoVideoMp4,
-        webmUrl: securityHubPromoVideoWebm,
-      },
-    },
   },
   {
     id: "proposalhub",
