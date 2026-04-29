@@ -5,10 +5,22 @@ import { Github, Linkedin, Menu, X } from "lucide-react";
 
 function ReplitIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-      <rect x="3" y="3" width="18" height="4.5" rx="1.25" />
-      <rect x="3" y="9.75" width="12" height="4.5" rx="1.25" />
-      <rect x="3" y="16.5" width="6" height="4.5" rx="1.25" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      {/* Top-left block */}
+      <rect x="3" y="2" width="9.5" height="8" rx="2.5" />
+      {/* Middle-right block */}
+      <rect x="11.5" y="9" width="9.5" height="6" rx="2.5" />
+      {/* Bottom-left block */}
+      <rect x="3" y="14" width="9.5" height="8" rx="2.5" />
     </svg>
   );
 }
