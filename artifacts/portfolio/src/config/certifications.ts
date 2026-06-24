@@ -1,4 +1,5 @@
 import zeroTrustStrategyBadge from "@assets/ZTStrategyCert_1777018893177.png";
+import aiSecurityFoundationsBadge from "@assets/image_1782303543433.png";
 
 export interface Certification {
   id: string;
@@ -69,12 +70,12 @@ export const CERTIFICATIONS: Certification[] = [
     style: "isc2",
   },
   {
-    id: "ai-strategy",
-    abbr: "AI Strategy",
-    name: "Building AI Strategy Certificate",
+    id: "ai-security-foundations",
+    abbr: "AI Security",
+    name: "AI Security Foundations",
     issuer: "ISC2",
     credlyUrl: "https://www.credly.com/badges/de53f898-9e73-4530-8aca-f44142b887d8",
-    imageUrl: "https://images.credly.com/size/340x340/images/ed057161-c699-452d-9052-c3186b11f4ae/blob",
+    imageUrl: aiSecurityFoundationsBadge,
     style: "isc2",
   },
 ];
