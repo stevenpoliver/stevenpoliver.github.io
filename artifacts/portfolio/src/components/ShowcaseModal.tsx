@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight, Sparkles, FileText, ExternalLink, Share2, Check } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Sparkles, FileText, ExternalLink, Share2, Check, Linkedin } from "lucide-react";
 import { Project, getEmbedUrl, getPdfEmbedUrl, hasShowcaseMedia } from "@/config/projects";
 
 interface ShowcaseModalProps {
@@ -268,7 +268,23 @@ export default function ShowcaseModal({ project, onClose }: ShowcaseModalProps) 
                 </div>
               )}
 
-              {!hasMedia && (
+              {!hasMedia && project.showcase?.teaserImage && (
+                <div className="relative w-full rounded-xl overflow-hidden border border-white/10 bg-black">
+                  <img
+                    src={project.showcase.teaserImage}
+                    alt={`${project.title} teaser`}
+                    className="w-full object-cover"
+                  />
+                  <div className="absolute bottom-3 right-3">
+                    <span className="inline-flex items-center gap-1.5 text-[0.65rem] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full bg-black/70 border border-white/10 text-[var(--accent-yellow)] backdrop-blur-sm">
+                      <Sparkles className="w-3 h-3" />
+                      Preview coming soon
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {!hasMedia && !project.showcase?.teaserImage && (
                 <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-dashed border-white/10 bg-gradient-to-br from-[var(--accent-yellow)]/[0.03] via-transparent to-blue-500/[0.04] flex flex-col items-center justify-center gap-3 px-6 text-center">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center bg-[var(--accent-yellow)]/10 text-[var(--accent-yellow)] border border-[var(--accent-yellow)]/20">
                     <Sparkles className="w-5 h-5" />
@@ -285,9 +301,35 @@ export default function ShowcaseModal({ project, onClose }: ShowcaseModalProps) 
                 </div>
               )}
 
-              <div>
-                <p className="text-foreground/90 leading-relaxed">{project.description}</p>
+              <div className="space-y-3">
+                {project.longDescription && (
+                  <p className="text-foreground/90 leading-relaxed">{project.longDescription}</p>
+                )}
+                <p className={`leading-relaxed ${project.longDescription ? "text-muted-foreground text-sm" : "text-foreground/90"}`}>
+                  {project.description}
+                </p>
               </div>
+
+              {project.links && project.links.length > 0 && (
+                <div className="flex flex-wrap gap-3">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.url}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-[var(--accent-yellow)]/10 hover:border-[var(--accent-yellow)]/40 hover:text-[var(--accent-yellow)] text-foreground transition-all duration-200"
+                    >
+                      {link.icon === "linkedin" ? (
+                        <Linkedin className="w-3.5 h-3.5" />
+                      ) : (
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      )}
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
 
               <div className="flex flex-wrap gap-2 pt-2 border-t border-white/10">
                 {project.tags.map((tag) => (
@@ -301,7 +343,8 @@ export default function ShowcaseModal({ project, onClose }: ShowcaseModalProps) 
               </div>
 
               <p className="text-[0.7rem] leading-relaxed text-[var(--accent-yellow)]/80 italic">
-                (Disclaimer: This is a personal concept project. All branding, product names, screens and data shown are illustrative only and do not reflect any client, employer or live production system.)
+                {project.disclaimer ??
+                  "(Disclaimer: This is a personal concept project. All branding, product names, screens and data shown are illustrative only and do not reflect any client, employer or live production system.)"}
               </p>
             </div>
           </motion.div>

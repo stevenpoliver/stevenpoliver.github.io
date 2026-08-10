@@ -19,10 +19,19 @@ export interface ProjectPdf {
   label?: string;
 }
 
+export interface ProjectLink {
+  label: string;
+  url: string;
+  /** lucide icon name to render, e.g. "ExternalLink" | "Linkedin" */
+  icon?: "external" | "linkedin";
+}
+
 export interface ProjectShowcase {
   video?: ProjectVideo;
   pdf?: ProjectPdf;
   screenshots?: ProjectScreenshot[];
+  /** Optional teaser/hero image shown in the modal media slot when no other media exists */
+  teaserImage?: string;
 }
 
 export interface Project {
@@ -31,19 +40,50 @@ export interface Project {
   status: string;
   title: string;
   description: string;
+  /** Longer description shown in the expanded modal view */
+  longDescription?: string;
   tags: string[];
+  links?: ProjectLink[];
+  /** Per-project disclaimer shown at the foot of the modal */
+  disclaimer?: string;
   showcase?: ProjectShowcase;
 }
 
+import singulrTeaser from "@assets/Singulr_Teaser_1786356645607.png";
+
 export const PROJECTS: Project[] = [
   {
-    id: "security-accelerators",
-    category: "Cyber Security / Consulting",
-    status: "Flagship Build · In Progress",
-    title: "Security & Governance Accelerator",
+    id: "singulr",
+    category: "Cybersecurity / Governance / GRC",
+    status: "PRIVATE BETA · LAUNCHING SOON",
+    title: "Singulr",
     description:
-      "A growing collection of practical tools, concepts, and frameworks aimed at accelerating cyber maturity assessments, design thinking, and delivery consistency.",
-    tags: ["Security", "Architecture", "Risk", "Advisory"],
+      "A cybersecurity knowledge and governance platform designed to help organisations learn, interpret, explore and mature across frameworks, controls and governance requirements — with greater clarity and less fragmentation.",
+    longDescription:
+      "Singulr brings cybersecurity frameworks, controls, governance concepts and supporting intelligence into one connected platform. It is designed to make complex standards easier to understand, compare and operationalise — helping practitioners move from learning and interpretation through to informed governance and maturity decisions.",
+    tags: [
+      "Cybersecurity",
+      "Governance",
+      "Risk",
+      "Compliance",
+      "Security Frameworks",
+      "Controls",
+      "Cyber Maturity",
+      "Knowledge Platform",
+    ],
+    links: [
+      { label: "Visit Singulr", url: "https://singulr.com.au/", icon: "external" },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/company/singulr-pty-ltd",
+        icon: "linkedin",
+      },
+    ],
+    disclaimer:
+      "Singulr is an independently developed cybersecurity knowledge and governance platform. Product capabilities and screenshots may evolve prior to general availability.",
+    showcase: {
+      teaserImage: singulrTeaser,
+    },
   },
   {
     id: "proposalhub",
