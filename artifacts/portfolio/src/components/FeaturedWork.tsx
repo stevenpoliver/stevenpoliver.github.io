@@ -93,7 +93,7 @@ export default function FeaturedWork() {
                   <button
                     onClick={() => setActiveProject(project)}
                     className={`inline-flex items-center gap-2 text-sm font-medium transition-colors duration-300 group/link ${
-                      ready
+                      ready || project.showcase?.teaserImage
                         ? "text-foreground hover:text-[var(--accent-yellow)]"
                         : "text-muted-foreground hover:text-[var(--accent-yellow)]/80"
                     }`}
@@ -101,6 +101,11 @@ export default function FeaturedWork() {
                     {ready ? (
                       <>
                         View showcase
+                        <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
+                      </>
+                    ) : project.showcase?.teaserImage ? (
+                      <>
+                        See more
                         <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
                       </>
                     ) : (
